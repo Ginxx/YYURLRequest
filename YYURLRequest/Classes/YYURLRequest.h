@@ -33,10 +33,10 @@ typedef NS_ENUM(NSInteger, YYHTTPMethod) {
                               path:(NSString *)path
                         parameters:(NSDictionary *)parameters;
 
-@property (nonatomic, copy, readonly) YYURLRequest *(^cache)(void (^)(id cachedData));
+@property (nonatomic, copy, readonly) YYURLRequest *(^cache)(void (^)(id response));
 
 @property (nonatomic, copy, readonly) YYURLRequest *(^then)(void (^)(id response));
 
-@property (nonatomic, copy) void (^error)(void (^)(NSError *error));
+@property (nonatomic, copy, readonly) void (^catch)(void (^)(NSError *error));
 
 @end

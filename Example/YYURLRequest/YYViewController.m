@@ -21,8 +21,8 @@
 {
     [super viewDidLoad];
     
-    [YYTestTarget requestUserEvent].cache(^(id cachedData) {
-        NSArray *list = [YYTestModel mapArray:cachedData];
+    [YYTestTarget requestUserEvent].cache(^(id response) {
+        NSArray *list = [YYTestModel mapArray:response];
         [list enumerateObjectsUsingBlock:^(YYTestModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSLog(@"cache: %@", obj.created_at);
         }];
@@ -31,7 +31,7 @@
         [list enumerateObjectsUsingBlock:^(YYTestModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSLog(@"success: %@", obj.created_at);
         }];
-    }).error(^(NSError *error) {
+    }).catch(^(NSError *error) {
         NSLog(@"error: %@", error);
     });
     
@@ -40,8 +40,8 @@
 //        [list enumerateObjectsUsingBlock:^(YYTestModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 //            NSLog(@"success: %@", obj.created_at);
 //        }];
-//    }).error(^(NSError *error) {
-//        NSLog(@"error: %@", error);
+//    }).catch(^(NSError *error) {
+//         NSLog(@"error: %@", error);
 //    });
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];

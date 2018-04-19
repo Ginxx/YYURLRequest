@@ -17,6 +17,8 @@
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 @property (nonatomic, assign) BOOL needsCache;
 
+@property (nonatomic, copy) void (^failure)(NSError *);
+
 @end
 
 @implementation YYURLRequest
@@ -54,17 +56,20 @@
 - (YYURLRequest *(^)(void (^)(id)))then
 {
     return ^(void (^success)(id)) {
-        __weak typeof(self) weakSelf = self;
-        self.error = ^(void (^failure)(NSError *error)) {
-            [weakSelf.manager startRequest:weakSelf success:^(id response) {
-                __strong typeof(weakSelf) strongSelf = weakSelf;
-                !success ?: success(response);
-                if (strongSelf.needsCache) [[YYCache sharedCache] setObject:response forKey:[strongSelf cachedKey]];
-            } failure:^(NSError *error) {
-                !failure ?: failure(error);
-            }];
-        };
-        return weakSelf;
+        [self.manager startRequest:self success:^(id response) {
+            !success ?: success(response);
+            if (self.needsCache) [[YYCache sharedCache] setObject:response forKey:[self cachedKey]];
+        } failure:^(NSError *error) {
+            !self.failure ?: self.failure(error);
+        }];
+        return self;
+    };
+}
+
+- (void (^)(void (^)(NSError *)))catch
+{
+    return ^(void (^failure)(NSError *)) {
+        self.failure = failure;
     };
 }
 
@@ -79,8 +84,8 @@
 
 - (NSString *)URLString
 {
-    if (!self.path) return self.baseURL.absoluteString;
-    return [NSURL URLWithString:self.path relativeToURL:self.baseURL].absoluteString;
+    if (self.path.length > 0) return [self.baseURL URLByAppendingPathComponent:self.path].absoluteString;
+    return self.baseURL.absoluteString;
 }
 
 - (AFHTTPRequestSerializer<AFURLRequestSerialization> *)requestSerializer
