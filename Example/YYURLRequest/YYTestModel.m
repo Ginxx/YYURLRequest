@@ -7,7 +7,13 @@
 //
 
 #import "YYTestModel.h"
+#import "YYTestResultModel.h"
 
 @implementation YYTestModel
+
++ (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass
+{
+    return @{@"stories": [YYTestResultModel class]};
+}
 
 @end

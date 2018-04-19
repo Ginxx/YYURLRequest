@@ -8,9 +8,13 @@
 
 #import <YYURLRequest/YYURLRequest.h>
 
+@class YYTestResultModel;
+
 @interface YYTestModel : YYBaseModel
 
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *created_at;
+@property (nonatomic, copy) NSString *date;
+@property (nonatomic, strong) NSArray<YYTestResultModel *> *stories;
 
 @end

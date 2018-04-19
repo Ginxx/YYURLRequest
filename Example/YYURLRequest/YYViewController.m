@@ -24,18 +24,15 @@
 {
     [super viewDidLoad];
     
-    [YYTestTarget requestUserEvent].cache(^(id response) {
-        NSArray *list = [YYTestModel mapArray:response];
-        [list enumerateObjectsUsingBlock:^(YYTestModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSLog(@"cache: %@", obj.created_at);
-        }];
+    YYURLRequest *request = [YYURLRequest requestWithBaseURL:[NSURL URLWithString:@"https://news-at.zhihu.com/api"] path:@"4/news/latest" parameters:nil];
+    request.cache(^(id response) {
+        YYTestModel *model = [YYTestModel mapObject:response];
+        NSLog(@"cache: %@", model.stories.firstObject.title);
     }).then(^(id response) {
-        NSArray *list = [YYTestModel mapArray:response];
-        [list enumerateObjectsUsingBlock:^(YYTestModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSLog(@"success: %@", obj.created_at);
-        }];
+        YYTestModel *model = [YYTestModel mapObject:response];
+        NSLog(@"success: %@", model.stories.firstObject.title);
     }).catch(^(NSError *error) {
-        NSLog(@"error");
+        NSLog(@"error: %@", error);
     });
     
 //    [YYTestTarget requestUserEvent].then(^(id response) {
@@ -47,15 +44,15 @@
 //         NSLog(@"error: %@", error);
 //    });
     
-    [YYTestTarget requestBannerList].yy_cache(^(YYResponse *response) {
-        NSLog(@"%@", response.message);
-    }).yy_then(^(YYResponse *response) {
-        NSLog(@"%@", response.message);
-        NSArray *list = [YYTestResultModel mapArray:response.result];
-        NSLog(@"%@", list);
-    }).catch(^(NSError *error) {
-        NSLog(@"error");
-    });
+//    [YYTestTarget requestBannerList].yy_cache(^(YYResponse *response) {
+//        NSLog(@"%@", response.message);
+//    }).yy_then(^(YYResponse *response) {
+//        NSLog(@"%@", response.message);
+//        NSArray *list = [YYTestResultModel mapArray:response.result];
+//        NSLog(@"%@", list);
+//    }).catch(^(NSError *error) {
+//        NSLog(@"error");
+//    });
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
     [self.view addGestureRecognizer:tap];
