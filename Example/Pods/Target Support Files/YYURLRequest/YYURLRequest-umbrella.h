@@ -10,6 +10,10 @@
 #endif
 #endif
 
+#import "AFHTTPSessionManager+YYURLRequest.h"
+#import "YYBaseModel+Map.h"
+#import "YYBaseModel.h"
+#import "YYCache+Shared.h"
 #import "YYURLRequest.h"
 
 FOUNDATION_EXPORT double YYURLRequestVersionNumber;

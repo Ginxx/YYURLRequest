@@ -22,6 +22,9 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		B56A0535208882FD000E4C57 /* YYTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B56A0534208882FD000E4C57 /* YYTestModel.m */; };
+		B56A05382088832C000E4C57 /* YYTestTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = B56A05372088832C000E4C57 /* YYTestTarget.m */; };
+		B56A053B2088838C000E4C57 /* YYURLRequest+Config.m in Sources */ = {isa = PBXBuildFile; fileRef = B56A053A2088838C000E4C57 /* YYURLRequest+Config.m */; };
 		B9E0506BB8DA8EB4926DC501 /* Pods_YYURLRequest_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE33B0F82E561F4AE4277030 /* Pods_YYURLRequest_Example.framework */; };
 		EB5AD373F29F6B83D4972975 /* Pods_YYURLRequest_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 388EE183956CCB80935C7BCD /* Pods_YYURLRequest_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +67,12 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5424E1680700B5B68F5FB9A /* Pods-YYURLRequest_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYURLRequest_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYURLRequest_Example/Pods-YYURLRequest_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AF815D4D6256C6714E26921B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		B56A0533208882FD000E4C57 /* YYTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYTestModel.h; sourceTree = "<group>"; };
+		B56A0534208882FD000E4C57 /* YYTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYTestModel.m; sourceTree = "<group>"; };
+		B56A05362088832C000E4C57 /* YYTestTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYTestTarget.h; sourceTree = "<group>"; };
+		B56A05372088832C000E4C57 /* YYTestTarget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYTestTarget.m; sourceTree = "<group>"; };
+		B56A05392088838C000E4C57 /* YYURLRequest+Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YYURLRequest+Config.h"; sourceTree = "<group>"; };
+		B56A053A2088838C000E4C57 /* YYURLRequest+Config.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YYURLRequest+Config.m"; sourceTree = "<group>"; };
 		BE33B0F82E561F4AE4277030 /* Pods_YYURLRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YYURLRequest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0C9D898AE34DBCCDAF36BB /* Pods-YYURLRequest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYURLRequest_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYURLRequest_Example/Pods-YYURLRequest_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DC09C6196866E602EB390066 /* Pods-YYURLRequest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYURLRequest_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYURLRequest_Tests/Pods-YYURLRequest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +146,12 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* YYViewController.h */,
 				6003F5A6195388D20070C39A /* YYViewController.m */,
+				B56A0533208882FD000E4C57 /* YYTestModel.h */,
+				B56A0534208882FD000E4C57 /* YYTestModel.m */,
+				B56A05362088832C000E4C57 /* YYTestTarget.h */,
+				B56A05372088832C000E4C57 /* YYTestTarget.m */,
+				B56A05392088838C000E4C57 /* YYURLRequest+Config.h */,
+				B56A053A2088838C000E4C57 /* YYURLRequest+Config.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -380,9 +395,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56A05382088832C000E4C57 /* YYTestTarget.m in Sources */,
+				B56A053B2088838C000E4C57 /* YYURLRequest+Config.m in Sources */,
 				6003F59E195388D20070C39A /* YYAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* YYViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				B56A0535208882FD000E4C57 /* YYTestModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
