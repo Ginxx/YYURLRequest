@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A4C8ACA945C02AC4E3F02B7 /* YYURLRequest.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = YYURLRequest.podspec; path = ../YYURLRequest.podspec; sourceTree = "<group>"; };
+		1A4C8ACA945C02AC4E3F02B7 /* YYURLRequest.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YYURLRequest.podspec; path = ../YYURLRequest.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		388EE183956CCB80935C7BCD /* Pods_YYURLRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YYURLRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C1E0F50D03641B173D33177 /* Pods-YYURLRequest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYURLRequest_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYURLRequest_Tests/Pods-YYURLRequest_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* YYURLRequest_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYURLRequest_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,10 +60,10 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7691532ECACDDFDF0778BF61 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		7691532ECACDDFDF0778BF61 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5424E1680700B5B68F5FB9A /* Pods-YYURLRequest_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYURLRequest_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYURLRequest_Example/Pods-YYURLRequest_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AF815D4D6256C6714E26921B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AF815D4D6256C6714E26921B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		BE33B0F82E561F4AE4277030 /* Pods_YYURLRequest_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YYURLRequest_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0C9D898AE34DBCCDAF36BB /* Pods-YYURLRequest_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYURLRequest_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYURLRequest_Example/Pods-YYURLRequest_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DC09C6196866E602EB390066 /* Pods-YYURLRequest_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYURLRequest_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYURLRequest_Tests/Pods-YYURLRequest_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -320,10 +320,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YYURLRequest_Example/Pods-YYURLRequest_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/YYURLRequest/YYURLRequest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYURLRequest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

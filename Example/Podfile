@@ -2,6 +2,9 @@ use_frameworks!
 
 target 'YYURLRequest_Example' do
   pod 'YYURLRequest', :path => '../'
+  pod 'AFNetworking'
+  pod 'YYModel'
+  pod 'YYCache'
 
   target 'YYURLRequest_Tests' do
     inherit! :search_paths
