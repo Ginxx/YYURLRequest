@@ -19,8 +19,8 @@ typedef NS_ENUM(NSInteger, YYHTTPMethod) {
 
 @interface YYURLRequest : NSObject
 
-@property (nonatomic, copy, readonly) NSString * URLString;
-@property (nonatomic, copy, readonly) NSDictionary<NSString *, id> * parameters;
+@property (nonatomic, copy, readonly) NSString *URLString;
+@property (nonatomic, copy, readonly) NSDictionary<NSString *, id> *parameters;
 
 @property (nonatomic, assign) YYHTTPMethod method;
 
@@ -29,19 +29,14 @@ typedef NS_ENUM(NSInteger, YYHTTPMethod) {
 
 @property (nonatomic, strong) void (^constructingBodyWithBlock)(id<AFMultipartFormData> formData);
 
-
-
 + (instancetype)requestWithBaseURL:(NSURL *)baseURL
                               path:(NSString *)path
                         parameters:(NSDictionary *)parameters;
 
-@property (nonatomic, copy) YYURLRequest *(^cache)(void (^)(id cachedData));
+@property (nonatomic, copy, readonly) YYURLRequest *(^cache)(void (^)(id cachedData));
 
-@property (nonatomic, copy) YYURLRequest *(^then)(void (^)(id response));
+@property (nonatomic, copy, readonly) YYURLRequest *(^then)(void (^)(id response));
 
 @property (nonatomic, copy) void (^error)(void (^)(NSError *error));
-
-- (void)completionWithSuccess:(void (^)(id response))success
-                      failure:(void (^)(NSError *error))failure;
 
 @end

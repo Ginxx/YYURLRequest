@@ -13,7 +13,7 @@
 
 + (YYURLRequest *)requestUserEvent
 {
-    return [YYURLRequest requestWithPath:@"users/ginxx/received_events" parameters:@{@"access_token": @"567e7c3f2fafa46e5c6fe9d6a2ea8ecf536e1494"}];
+    return [YYURLRequest requestWithPath:@"users/ginxx/received_events" parameters:@{@"access_token": @"78b8645ce7c1bb854330b1b54810cce445b48f59"}];
 }
 
 @end

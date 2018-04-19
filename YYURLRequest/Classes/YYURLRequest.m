@@ -17,8 +17,6 @@
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 @property (nonatomic, assign) BOOL needsCache;
 
-@property (nonatomic, copy) void (^failureBlock)(id);
-
 @end
 
 @implementation YYURLRequest
@@ -56,28 +54,18 @@
 - (YYURLRequest *(^)(void (^)(id)))then
 {
     return ^(void (^success)(id)) {
-        [self.manager startRequest:self success:^(id response) {
-            !success ?: success(response);
-            if (self.needsCache) [[YYCache sharedCache] setObject:response forKey:[self cachedKey]];
-        } failure:self.failureBlock];
-        return self;
+        __weak typeof(self) weakSelf = self;
+        self.error = ^(void (^failure)(NSError *error)) {
+            [weakSelf.manager startRequest:weakSelf success:^(id response) {
+                __strong typeof(weakSelf) strongSelf = weakSelf;
+                !success ?: success(response);
+                if (strongSelf.needsCache) [[YYCache sharedCache] setObject:response forKey:[strongSelf cachedKey]];
+            } failure:^(NSError *error) {
+                !failure ?: failure(error);
+            }];
+        };
+        return weakSelf;
     };
-}
-
-- (void (^)(void (^)(NSError *)))error
-{
-    return ^(void (^failure)(NSError *)) {
-        failure = self.failureBlock;
-    };
-}
-
-- (void)completionWithSuccess:(void (^)(id))success
-                      failure:(void (^)(NSError *))failure
-{
-    [self.manager startRequest:self success:^(id response) {
-        !success ?: success(response);
-        if (self.needsCache) [[YYCache sharedCache] setObject:response forKey:[self cachedKey]];
-    } failure:failure];
 }
 
 #pragma mark - getter

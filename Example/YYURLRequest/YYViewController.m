@@ -35,20 +35,33 @@
         NSLog(@"error: %@", error);
     });
     
-//    [[YYTestTarget requestUserEvent] completionWithSuccess:^(id response) {
+//    [YYTestTarget requestUserEvent].then(^(id response) {
 //        NSArray *list = [YYTestModel mapArray:response];
 //        [list enumerateObjectsUsingBlock:^(YYTestModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 //            NSLog(@"success: %@", obj.created_at);
 //        }];
-//    } failure:^(NSError *error) {
-//
-//    }];
+//    }).error(^(NSError *error) {
+//        NSLog(@"error: %@", error);
+//    });
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void)dealloc
+{
+    NSLog(@"dealloc");
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tapAction
+{
+    [self.navigationController pushViewController:[YYViewController new] animated:YES];
 }
 
 @end
