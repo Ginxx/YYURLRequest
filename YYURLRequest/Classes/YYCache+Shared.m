@@ -15,7 +15,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSString *cachesDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
-        NSString *cachedPath = [cachesDirectory stringByAppendingPathComponent:@"YYNetworkRequestCache"];
+        NSString *cachedPath = [cachesDirectory stringByAppendingPathComponent:@"YYURLRequestCache"];
         BOOL isDir;
         if (![[NSFileManager defaultManager] fileExistsAtPath:cachedPath isDirectory:&isDir]) {
             [[NSFileManager defaultManager] createDirectoryAtPath:cachedPath withIntermediateDirectories:YES attributes:nil error:nil];
