@@ -93,9 +93,19 @@
     return self.manager.requestSerializer;
 }
 
+- (void)setRequestSerializer:(AFHTTPRequestSerializer<AFURLRequestSerialization> *)requestSerializer
+{
+    self.manager.requestSerializer = requestSerializer;
+}
+
 - (AFHTTPResponseSerializer<AFURLResponseSerialization> *)responseSerializer
 {
     return self.manager.responseSerializer;
+}
+
+- (void)setResponseSerializer:(AFHTTPResponseSerializer<AFURLResponseSerialization> *)responseSerializer
+{
+    self.manager.responseSerializer = responseSerializer;
 }
 
 - (NSString *)cachedKey

@@ -8,8 +8,14 @@
 
 #import <YYURLRequest/YYURLRequest.h>
 
+@class YYResponse;
+
 @interface YYURLRequest (Config)
 
 + (instancetype)requestWithPath:(NSString *)path parameters:(NSDictionary *)parameters;
+
+@property (nonatomic, copy, readonly) YYURLRequest *(^yy_cache)(void (^)(YYResponse *response));
+
+@property (nonatomic, copy, readonly) YYURLRequest *(^yy_then)(void (^)(YYResponse *response));
 
 @end

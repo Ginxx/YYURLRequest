@@ -9,7 +9,10 @@
 #import "YYViewController.h"
 #import "YYTestTarget.h"
 #import <YYURLRequest/YYURLRequest.h>
+#import "YYURLRequest+Config.h"
+#import "YYResponse.h"
 #import "YYTestModel.h"
+#import "YYTestResultModel.h"
 
 @interface YYViewController ()
 
@@ -32,7 +35,7 @@
             NSLog(@"success: %@", obj.created_at);
         }];
     }).catch(^(NSError *error) {
-        NSLog(@"error: %@", error);
+        NSLog(@"error");
     });
     
 //    [YYTestTarget requestUserEvent].then(^(id response) {
@@ -43,6 +46,16 @@
 //    }).catch(^(NSError *error) {
 //         NSLog(@"error: %@", error);
 //    });
+    
+    [YYTestTarget requestBannerList].yy_cache(^(YYResponse *response) {
+        NSLog(@"%@", response.message);
+    }).yy_then(^(YYResponse *response) {
+        NSLog(@"%@", response.message);
+        NSArray *list = [YYTestResultModel mapArray:response.result];
+        NSLog(@"%@", list);
+    }).catch(^(NSError *error) {
+        NSLog(@"error");
+    });
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
     [self.view addGestureRecognizer:tap];

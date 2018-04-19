@@ -14,4 +14,6 @@
 
 + (YYURLRequest *)requestUserEvent;
 
++ (YYURLRequest *)requestBannerList;
+
 @end

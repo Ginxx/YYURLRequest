@@ -8,6 +8,7 @@
 
 #import "YYURLRequest+Config.h"
 #import <YYURLRequest/YYURLRequest.h>
+#import "YYResponse.h"
 
 #define kBaseURL [NSURL URLWithString:@"https://api.github.com/"]
 
@@ -19,6 +20,26 @@
     request.requestSerializer.timeoutInterval = 10;
     request.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", @"image/jpeg", @"image/png", nil];
     return request;
+}
+
+- (YYURLRequest *(^)(void (^)(YYResponse *)))yy_cache
+{
+    return ^(void (^callback)(id)) {
+        return self.cache(^(id response) {
+            YYResponse *resp = [YYResponse mapObject:response];
+            callback(resp);
+        });
+    };
+}
+
+- (YYURLRequest *(^)(void (^)(YYResponse *)))yy_then
+{
+    return ^(void (^success)(id)) {
+        return self.then(^(id response) {
+            YYResponse *resp = [YYResponse mapObject:response];
+            success(resp);
+        });
+    };
 }
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33340FC92088D72D0005A1F8 /* YYResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 33340FC82088D72D0005A1F8 /* YYResponse.m */; };
+		33340FCC2088E0C40005A1F8 /* YYTestResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 33340FCB2088E0C40005A1F8 /* YYTestResultModel.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -41,6 +43,10 @@
 
 /* Begin PBXFileReference section */
 		1A4C8ACA945C02AC4E3F02B7 /* YYURLRequest.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YYURLRequest.podspec; path = ../YYURLRequest.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		33340FC72088D72D0005A1F8 /* YYResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYResponse.h; sourceTree = "<group>"; };
+		33340FC82088D72D0005A1F8 /* YYResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYResponse.m; sourceTree = "<group>"; };
+		33340FCA2088E0C40005A1F8 /* YYTestResultModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYTestResultModel.h; sourceTree = "<group>"; };
+		33340FCB2088E0C40005A1F8 /* YYTestResultModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYTestResultModel.m; sourceTree = "<group>"; };
 		388EE183956CCB80935C7BCD /* Pods_YYURLRequest_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YYURLRequest_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C1E0F50D03641B173D33177 /* Pods-YYURLRequest_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYURLRequest_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYURLRequest_Tests/Pods-YYURLRequest_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* YYURLRequest_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYURLRequest_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,10 +154,14 @@
 				6003F5A6195388D20070C39A /* YYViewController.m */,
 				B56A0533208882FD000E4C57 /* YYTestModel.h */,
 				B56A0534208882FD000E4C57 /* YYTestModel.m */,
+				33340FCA2088E0C40005A1F8 /* YYTestResultModel.h */,
+				33340FCB2088E0C40005A1F8 /* YYTestResultModel.m */,
 				B56A05362088832C000E4C57 /* YYTestTarget.h */,
 				B56A05372088832C000E4C57 /* YYTestTarget.m */,
 				B56A05392088838C000E4C57 /* YYURLRequest+Config.h */,
 				B56A053A2088838C000E4C57 /* YYURLRequest+Config.m */,
+				33340FC72088D72D0005A1F8 /* YYResponse.h */,
+				33340FC82088D72D0005A1F8 /* YYResponse.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -395,9 +405,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33340FCC2088E0C40005A1F8 /* YYTestResultModel.m in Sources */,
 				B56A05382088832C000E4C57 /* YYTestTarget.m in Sources */,
 				B56A053B2088838C000E4C57 /* YYURLRequest+Config.m in Sources */,
 				6003F59E195388D20070C39A /* YYAppDelegate.m in Sources */,
+				33340FC92088D72D0005A1F8 /* YYResponse.m in Sources */,
 				6003F5A7195388D20070C39A /* YYViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				B56A0535208882FD000E4C57 /* YYTestModel.m in Sources */,
