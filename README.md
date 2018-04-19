@@ -22,8 +22,43 @@ pod 'YYURLRequest'
 
 ## Author
 
-G-Xi0N, gao497868860@163.com
+gaoX, gao497868860@163.com
 
 ## License
 
 YYURLRequest is available under the MIT license. See the LICENSE file for more info.
+
+## Usage
+
+### Import
+
+``` objc
+   #import <YYURLRequest/YYURLRequest.h>
+```
+
+### Request with cache
+
+``` objc
+  YYURLRequest *request = [YYURLRequest requestWithBaseURL:[NSURL URLWithString:@"https://news-at.zhihu.com/api"] path:@"4/news/latest" parameters:nil];
+  request.cache(^(id response) {
+      YYTestModel *model = [YYTestModel mapObject:response];
+      NSLog(@"cache: %@", model.stories);
+  }).then(^(id response) {
+      YYTestModel *model = [YYTestModel mapObject:response];
+      NSLog(@"success: %@", model.stories.firstObject.title);
+  }).catch(^(NSError *error) {
+      NSLog(@"error: %@", error);
+  });
+```
+
+### Request without cache
+
+``` objc
+  YYURLRequest *request = [YYURLRequest requestWithBaseURL:[NSURL URLWithString:@"https://news-at.zhihu.com/api"] path:@"4/news/latest" parameters:nil];
+  request.then(^(id response) {
+      YYTestModel *model = [YYTestModel mapObject:response];
+      NSLog(@"success: %@", model.stories.firstObject.title);
+  }).catch(^(NSError *error) {
+      NSLog(@"error: %@", error);
+  });
+```
