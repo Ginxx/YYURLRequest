@@ -33,32 +33,28 @@ YYURLRequest is available under the MIT license. See the LICENSE file for more i
 ### Import
 
 ``` objc
-   #import <YYURLRequest/YYURLRequest.h>
+#import <YYURLRequest/YYURLRequest.h>
 ```
 
 ### Request with cache
 
 ``` objc
-  YYURLRequest *request = [YYURLRequest requestWithBaseURL:[NSURL URLWithString:@"https://news-at.zhihu.com/api"] path:@"4/news/latest" parameters:nil];
-  request.cache(^(id response) {
-      YYTestModel *model = [YYTestModel mapObject:response];
-      NSLog(@"cache: %@", model.stories);
-  }).then(^(id response) {
-      YYTestModel *model = [YYTestModel mapObject:response];
-      NSLog(@"success: %@", model.stories.firstObject.title);
-  }).catch(^(NSError *error) {
-      NSLog(@"error: %@", error);
-  });
+YYURLRequest *request = [YYURLRequest requestWithBaseURL:[NSURL URLWithString:@""] path:@"" parameters:@{}];
+request.cache(^(id response) {
+        
+}).then(^(id response) {
+        
+}).catch(^(NSError *error) {
+        
+});
 ```
 
 ### Request without cache
 
 ``` objc
-  YYURLRequest *request = [YYURLRequest requestWithBaseURL:[NSURL URLWithString:@"https://news-at.zhihu.com/api"] path:@"4/news/latest" parameters:nil];
-  request.then(^(id response) {
-      YYTestModel *model = [YYTestModel mapObject:response];
-      NSLog(@"success: %@", model.stories.firstObject.title);
-  }).catch(^(NSError *error) {
-      NSLog(@"error: %@", error);
-  });
+request.then(^(id response) {
+        
+}).catch(^(NSError *error) {
+        
+});
 ```
