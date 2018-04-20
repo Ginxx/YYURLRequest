@@ -30,7 +30,7 @@
         NSLog(@"cache: %@", model.stories.firstObject.title);
     }).then(^(id response) {
         YYTestModel *model = [YYTestModel mapObject:response];
-        NSLog(@"success: %@", model.stories.firstObject.title);
+        NSLog(@"then: %@", model.stories.firstObject.title);
     }).catch(^(NSError *error) {
         NSLog(@"error: %@", error);
     });
@@ -44,15 +44,17 @@
 //         NSLog(@"error: %@", error);
 //    });
     
-//    [YYTestTarget requestBannerList].yy_cache(^(YYResponse *response) {
-//        NSLog(@"%@", response.message);
-//    }).yy_then(^(YYResponse *response) {
-//        NSLog(@"%@", response.message);
-//        NSArray *list = [YYTestResultModel mapArray:response.result];
-//        NSLog(@"%@", list);
-//    }).catch(^(NSError *error) {
-//        NSLog(@"error");
-//    });
+    [YYTestTarget requestBannerList].yy_cache(^(YYResponse *response) {
+        NSArray *list = [YYTestResultModel mapArray:response.result];
+        YYTestResultModel *model = list.firstObject;
+        NSLog(@"yy_cache: %@", model.name);
+    }).yy_then(^(YYResponse *response) {
+        NSArray *list = [YYTestResultModel mapArray:response.result];
+        YYTestResultModel *model = list.firstObject;
+        NSLog(@"yy_then: %@", model.name);
+    }).catch(^(NSError *error) {
+        NSLog(@"catch: %@", error);
+    });
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
     [self.view addGestureRecognizer:tap];
