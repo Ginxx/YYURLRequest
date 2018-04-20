@@ -47,7 +47,8 @@
 - (YYURLRequest *(^)(void (^)(id)))cache
 {
     return ^(void (^callback)(id)) {
-        callback([[YYCache sharedCache] objectForKey:[self cachedKey]]);
+        id cachedData = [[YYCache sharedCache] objectForKey:[self cachedKey]];
+        if (cachedData) callback(cachedData);
         self.needsCache = YES;
         return self;
     };
