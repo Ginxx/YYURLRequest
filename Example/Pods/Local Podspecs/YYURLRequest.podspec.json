@@ -1,7 +1,7 @@
 {
   "name": "YYURLRequest",
-  "version": "0.1.0",
-  "summary": "A short description of YYURLRequest.",
+  "version": "0.1.1",
+  "summary": "A ObjectiveC network library.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Ginxx/YYURLRequest",
   "license": {
@@ -12,8 +12,8 @@
     "G-Xi0N": "gao497868860@163.com"
   },
   "source": {
-    "git": "https://github.com/Ginxx/YYURLRequest",
-    "tag": "0.1.0"
+    "git": "https://github.com/Ginxx/YYURLRequest.git",
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "8.0"

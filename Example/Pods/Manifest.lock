@@ -21,7 +21,7 @@ PODS:
     - FBSnapshotTestCase/Core
   - YYCache (1.0.4)
   - YYModel (1.0.4)
-  - YYURLRequest (0.1.0):
+  - YYURLRequest (0.1.1):
     - AFNetworking
     - YYCache
     - YYModel
@@ -49,7 +49,7 @@ SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
-  YYURLRequest: 1ab15cf5d6f538eb47b9abd8b30dd7d86714f26b
+  YYURLRequest: fdf05737d067188244144e63f782764b7683071e
 
 PODFILE CHECKSUM: 03c1f14fc9475a2b883b24accffa2f7bbe02d0e2
 
