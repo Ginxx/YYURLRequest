@@ -20,14 +20,6 @@ it, simply add the following line to your Podfile:
 pod 'YYURLRequest'
 ```
 
-## Author
-
-gaoX, gao497868860@163.com
-
-## License
-
-YYURLRequest is available under the MIT license. See the LICENSE file for more info.
-
 ## Usage
 
 ### Import
@@ -58,3 +50,11 @@ request.then(^(id response) {
         
 });
 ```
+
+## Author
+
+gaoX, gao497868860@163.com
+
+## License
+
+YYURLRequest is available under the MIT license. See the LICENSE file for more info.
