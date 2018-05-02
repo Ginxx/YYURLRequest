@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, YYHTTPMethod) {
 @property (nonatomic, strong) AFHTTPRequestSerializer<AFURLRequestSerialization> *requestSerializer;
 @property (nonatomic, strong) AFHTTPResponseSerializer<AFURLResponseSerialization> *responseSerializer;
 
-@property (nonatomic, strong) void (^constructingBodyWithBlock)(id<AFMultipartFormData> formData);
+@property (nonatomic, copy) void (^constructingBodyWithBlock)(id<AFMultipartFormData> formData);
 
 + (instancetype)requestWithBaseURL:(NSURL *)baseURL
                               path:(NSString *)path
