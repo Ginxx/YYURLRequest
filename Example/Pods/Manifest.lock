@@ -16,7 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - YYCache (1.0.4)
   - YYModel (1.0.4)
-  - YYURLRequest (0.2.0):
+  - YYURLRequest (0.2.1):
     - AFNetworking
     - YYCache
     - YYModel
@@ -41,7 +41,7 @@ SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
-  YYURLRequest: 75bd32fda78d28b79b243d95dcc922d8139d5a5f
+  YYURLRequest: 77b15249d2ed94d3ee8fd1ec46e97256ea062720
 
 PODFILE CHECKSUM: 761118ff886d87558a20bb2d998294fc11b8a787
 
