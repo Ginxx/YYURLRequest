@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSString *path;
 
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) NSURLSessionDataTask *task;
 @property (nonatomic, assign) BOOL needsCache;
 
 @property (nonatomic, copy) void (^failure)(NSError *);
@@ -57,7 +58,7 @@
 - (YYURLRequest *(^)(void (^)(id)))then
 {
     return ^(void (^success)(id)) {
-        [self.manager startRequest:self success:^(id response) {
+        self.task = [self.manager startRequest:self success:^(id response) {
             !success ?: success(response);
             if (self.needsCache) [[YYCache sharedCache] setObject:response forKey:[self cachedKey]];
         } failure:^(NSError *error) {
@@ -67,14 +68,15 @@
     };
 }
 
-- (void (^)(void (^)(NSError *)))catch
+- (NSURLSessionDataTask *(^)(void (^)(NSError *)))catch
 {
     return ^(void (^failure)(NSError *)) {
         self.failure = failure;
+        return self.task;
     };
 }
 
-#pragma mark - getter
+#pragma mark - getter & setter
 - (AFHTTPSessionManager *)manager
 {
     if (!_manager) {

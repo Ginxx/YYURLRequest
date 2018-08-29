@@ -11,8 +11,8 @@
 
 @interface AFHTTPSessionManager (YYURLRequest)
 
-- (void)startRequest:(YYURLRequest *)request
-             success:(void (^)(id response))success
-             failure:(void (^)(NSError *error))failure;
+- (NSURLSessionDataTask *)startRequest:(YYURLRequest *)request
+                               success:(void (^)(id response))success
+                               failure:(void (^)(NSError *error))failure;
 
 @end

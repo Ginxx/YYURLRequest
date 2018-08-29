@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger, YYHTTPMethod) {
 
 @property (nonatomic, strong) AFSecurityPolicy *securityPolicy;
 
-@property (nonatomic, copy) void (^constructingBodyWithBlock)(id<AFMultipartFormData> formData);
+@property (nonatomic, copy) void (^constructingBodyBlock)(id<AFMultipartFormData> formData);
 
 + (instancetype)requestWithBaseURL:(NSURL *)baseURL
                               path:(NSString *)path
@@ -45,6 +45,6 @@ typedef NS_ENUM(NSInteger, YYHTTPMethod) {
 
 @property (nonatomic, copy, readonly) YYURLRequest *(^then)(void (^)(id response));
 
-@property (nonatomic, copy, readonly) void (^catch)(void (^)(NSError *error));
+@property (nonatomic, copy, readonly) NSURLSessionDataTask *(^catch)(void (^)(NSError *error));
 
 @end
