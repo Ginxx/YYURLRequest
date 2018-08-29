@@ -1,8 +1,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YYURLRequest'
-  s.version          = '0.1.1'
-  s.summary          = 'A Objective-C network library.'
+  s.version          = '0.2.0'
+  s.summary          = 'A Objective-C network library based on AFNetworking/YYModel/YYCache.'
   s.homepage         = 'https://github.com/Pircate/YYURLRequest'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'G-Xi0N' => 'gao497868860@163.com' }

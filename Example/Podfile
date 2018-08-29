@@ -9,6 +9,5 @@ target 'YYURLRequest_Example' do
   target 'YYURLRequest_Tests' do
     inherit! :search_paths
 
-    pod 'FBSnapshotTestCase'
   end
 end

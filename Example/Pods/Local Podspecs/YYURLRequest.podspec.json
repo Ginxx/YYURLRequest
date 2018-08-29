@@ -1,9 +1,8 @@
 {
   "name": "YYURLRequest",
-  "version": "0.1.1",
-  "summary": "A ObjectiveC network library.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Ginxx/YYURLRequest",
+  "version": "0.2.0",
+  "summary": "A Objective-C network library based on AFNetworking/YYModel/YYCache.",
+  "homepage": "https://github.com/Pircate/YYURLRequest",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +11,8 @@
     "G-Xi0N": "gao497868860@163.com"
   },
   "source": {
-    "git": "https://github.com/Ginxx/YYURLRequest.git",
-    "tag": "0.1.1"
+    "git": "https://github.com/Pircate/YYURLRequest.git",
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0"
