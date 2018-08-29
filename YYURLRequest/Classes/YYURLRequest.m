@@ -2,7 +2,7 @@
 //  YYURLRequest.m
 //  YYURLRequest
 //
-//  Created by GorXion on 2018/4/19.
+//  Created by Pircate on 2018/4/19.
 //
 
 #import "YYURLRequest.h"
@@ -107,6 +107,16 @@
 - (void)setResponseSerializer:(AFHTTPResponseSerializer<AFURLResponseSerialization> *)responseSerializer
 {
     self.manager.responseSerializer = responseSerializer;
+}
+
+- (AFSecurityPolicy *)securityPolicy
+{
+    return self.manager.securityPolicy;
+}
+
+- (void)setSecurityPolicy:(AFSecurityPolicy *)securityPolicy
+{
+    self.manager.securityPolicy = securityPolicy;
 }
 
 - (NSString *)cachedKey

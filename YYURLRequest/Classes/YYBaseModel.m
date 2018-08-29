@@ -2,7 +2,7 @@
 //  YYBaseModel.m
 //  YYURLRequest
 //
-//  Created by GorXion on 2018/4/19.
+//  Created by Pircate on 2018/4/19.
 //
 
 #import "YYBaseModel.h"

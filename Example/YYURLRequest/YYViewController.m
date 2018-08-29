@@ -32,7 +32,7 @@
         YYTestModel *model = [YYTestModel mapObject:response];
         NSLog(@"then: %@", model.stories.firstObject.title);
     }).catch(^(NSError *error) {
-        NSLog(@"error: %@", error);
+        NSLog(@"catch: %@", error);
     });
     
 //    [YYTestTarget requestUserEvent].then(^(id response) {
@@ -53,7 +53,7 @@
         YYTestResultModel *model = list.firstObject;
         NSLog(@"yy_then: %@", model.name);
     }).catch(^(NSError *error) {
-        NSLog(@"catch: %@", error);
+        NSLog(@"yy_catch: %@", error);
     });
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
