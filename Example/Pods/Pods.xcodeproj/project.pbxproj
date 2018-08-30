@@ -1371,7 +1371,7 @@
 			};
 			name = Release;
 		};
-		9F4B9DB96F4389E55B8087CF892562D7 /* Release */ = {
+		A46B43F1D6FF621AA643DD4403786A0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B943BC8F5026F21A8B3D45BD46923B6 /* YYURLRequest.xcconfig */;
 			buildSettings = {
@@ -1387,7 +1387,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/YYURLRequest/YYURLRequest-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/YYURLRequest/YYURLRequest-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/YYURLRequest/YYURLRequest.modulemap";
 				PRODUCT_MODULE_NAME = YYURLRequest;
@@ -1396,11 +1396,10 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		BEFDB93BF207328A04F1220475D02C3B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1527,7 +1526,7 @@
 			};
 			name = Release;
 		};
-		F84356745637D0ACBD7AA3B76F1748B8 /* Debug */ = {
+		F2FCA785E47D4929C2926E4781C970B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2B943BC8F5026F21A8B3D45BD46923B6 /* YYURLRequest.xcconfig */;
 			buildSettings = {
@@ -1543,7 +1542,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/YYURLRequest/YYURLRequest-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/YYURLRequest/YYURLRequest-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/YYURLRequest/YYURLRequest.modulemap";
 				PRODUCT_MODULE_NAME = YYURLRequest;
@@ -1552,10 +1551,11 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1581,8 +1581,8 @@
 		2FE1C2C5344B509ECCD5191164DF1483 /* Build configuration list for PBXNativeTarget "YYURLRequest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F84356745637D0ACBD7AA3B76F1748B8 /* Debug */,
-				9F4B9DB96F4389E55B8087CF892562D7 /* Release */,
+				A46B43F1D6FF621AA643DD4403786A0B /* Debug */,
+				F2FCA785E47D4929C2926E4781C970B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
