@@ -13,11 +13,18 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-YYURLRequest is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+YYURLRequest is available through [CocoaPods](http://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage). To install
+it, simply add the following line to your Podfile or Cartfile:
+
+### CocoaPods
 
 ```ruby
 pod 'YYURLRequest'
+```
+
+### Carthage
+```ruby
+github "Pircate/YYURLRequest"
 ```
 
 ## Usage
